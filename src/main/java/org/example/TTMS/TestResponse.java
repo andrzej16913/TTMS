@@ -1,4 +1,4 @@
 package org.example.TTMS;
 
-public record TestResponse() {
+public record TestResponse(String message) {
 }
