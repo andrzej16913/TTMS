@@ -1,0 +1,46 @@
+get:
+  summary: Search for route between stations at specified date and time
+  operationId: searchRoute
+  tags:
+    - search
+  parameters:
+    - name: departureStationId
+      in: path
+      required: true
+      description: The ID of the departure station
+      schema:
+        type: integer
+        format: int32
+    - name: arrivalStationId
+      in: path
+      required: true
+      description: The ID of the arrival station
+      schema:
+        type: integer
+        format: int32
+    - name: dateAndTime
+      in: path
+      required: true
+      description: The date and time of the departure (default) or arrival
+      schema:
+        type: string
+        format: date-time
+    - name: timeIsArrival
+      in: path
+      required: false
+      description: If set to true, dateAndTime parameter must be treated as arrival time
+      schema:
+        type: boolean
+  responses:
+    '200':
+      description: An array of routes
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/RouteList.yaml"
+    default:
+      description: Error
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/Error.yaml"

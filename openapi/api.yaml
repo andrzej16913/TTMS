@@ -1,0 +1,11 @@
+openapi: 3.1.0
+info:
+  title: TTMS API
+  description: An API specification for Transport Ticket Management System
+  version: 0.1.0
+paths:
+  /searchRoute:
+    $ref: "./paths/searchRoute.yaml"
+components:
+  schemas:
+    $ref: "./schemas/_index.yaml"

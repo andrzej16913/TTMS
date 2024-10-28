@@ -1,0 +1,4 @@
+Route:
+  type: array
+  items:
+    $ref: "./Trip.yaml"

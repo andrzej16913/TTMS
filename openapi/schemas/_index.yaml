@@ -1,0 +1,8 @@
+RouteList:
+  $ref: "./RouteList.yaml"
+Route:
+  $ref: "./Route.yaml"
+Trip:
+  $ref: "./Trip.yaml"
+Error:
+  $ref: "./Error.yaml"

@@ -1,0 +1,30 @@
+Trip:
+  type: object
+  required:
+    - departureStationId
+    - departureStationName
+    - departureDateTime
+    - arrivalStationId
+    - arrivalStationName
+    - arrivalDateTime
+  properties:
+    departureStationId:
+      type: integer
+      format: int32
+    departureStationName:
+      type: string
+    departureDateTime:
+      type: string
+      format: date-time
+    arrivalStationId:
+      type: integer
+      format: int32
+    arrivalStationName:
+      type: string
+    arrivalDateTime:
+      type: string
+      format: date-time
+    serviceName:
+      type: string
+    vehicleType:
+      type: string

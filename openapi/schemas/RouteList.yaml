@@ -1,0 +1,4 @@
+RouteList:
+  type: array
+  items:
+    $ref: "./Route.yaml"
