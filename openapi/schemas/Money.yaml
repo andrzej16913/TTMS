@@ -1,0 +1,13 @@
+type: object
+title: Amount of money
+description: Schema for transmitting an amount of money in any currency
+properties:
+  amount:
+    type: string
+    description: Monetary amount with decimal point
+    pattern: ^[0-9]+[.]?[0-9]*$
+  currency:
+    type: string
+    description: Currency code in ISO 4217 standard
+    pattern: ^[a-zA-Z]{3}$
+

@@ -1,5 +1,7 @@
 Trip:
   type: object
+  title: Trip
+  description: An object representing one continous trip on one vehicle from the enbarkment to the disembarkment 
   required:
     - departureStationId
     - departureStationName
@@ -7,6 +9,7 @@ Trip:
     - arrivalStationId
     - arrivalStationName
     - arrivalDateTime
+    - price
   properties:
     departureStationId:
       type: integer
@@ -24,7 +27,14 @@ Trip:
     arrivalDateTime:
       type: string
       format: date-time
+    price:
+      $ref: "./Money.yaml"
     serviceName:
       type: string
     vehicleType:
       type: string
+    reservationAvailable:
+      type: boolean
+    reservationRequired:
+      type: boolean
+
