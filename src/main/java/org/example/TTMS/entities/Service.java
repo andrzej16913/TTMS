@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class Route {
+public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;

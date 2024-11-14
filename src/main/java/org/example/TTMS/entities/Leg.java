@@ -20,7 +20,7 @@ public class Leg {
 
     @ManyToOne
     //@Column(nullable = false)
-    private Route route;
+    private Service route;
 
     private LocalDateTime departureTime;
     private LocalDateTime arrivalTime;
