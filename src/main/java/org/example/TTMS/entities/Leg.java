@@ -49,6 +49,14 @@ public class Leg {
         this.destination = destination;
     }
 
+    public Service getRoute() {
+        return route;
+    }
+
+    public void setRoute(Service route) {
+        this.route = route;
+    }
+
     public LocalDateTime getDepartureTime() {
         return departureTime;
     }
