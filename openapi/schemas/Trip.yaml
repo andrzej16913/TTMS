@@ -13,7 +13,7 @@ Trip:
   properties:
     departureStationId:
       type: integer
-      format: int32
+      format: int64
     departureStationName:
       type: string
     departureDateTime:
@@ -21,7 +21,7 @@ Trip:
       format: date-time
     arrivalStationId:
       type: integer
-      format: int32
+      format: int64
     arrivalStationName:
       type: string
     arrivalDateTime:
