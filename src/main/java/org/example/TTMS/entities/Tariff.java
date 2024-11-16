@@ -3,15 +3,13 @@ package org.example.TTMS.entities;
 import jakarta.persistence.*;
 
 @Entity
-public class Station {
+public class Tariff {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    @Column(nullable = false)
     private String name;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 

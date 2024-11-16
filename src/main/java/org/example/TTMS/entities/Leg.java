@@ -3,11 +3,12 @@ package org.example.TTMS.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 public class Leg {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @ManyToOne
@@ -20,7 +21,7 @@ public class Leg {
 
     @ManyToOne
     //@Column(nullable = false)
-    private Service route;
+    private Service service;
 
     private LocalDateTime departureTime;
     private LocalDateTime arrivalTime;
@@ -49,12 +50,12 @@ public class Leg {
         this.destination = destination;
     }
 
-    public Service getRoute() {
-        return route;
+    public Service getService() {
+        return service;
     }
 
-    public void setRoute(Service route) {
-        this.route = route;
+    public void setService(Service service) {
+        this.service = service;
     }
 
     public LocalDateTime getDepartureTime() {
@@ -71,5 +72,13 @@ public class Leg {
 
     public void setArrivalTime(LocalDateTime arrivalTime) {
         this.arrivalTime = arrivalTime;
+    }
+
+    public String getDepartureTimeAsIsoString() {
+        return getDepartureTime().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+    }
+
+    public String getArrivalTimeAsIsoString() {
+        return getArrivalTime().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
     }
 }
