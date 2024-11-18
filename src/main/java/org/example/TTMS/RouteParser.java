@@ -28,13 +28,13 @@ public class RouteParser {
                 if (leg.getService().equals(firstLeg.getService())) {
                     previousLeg = leg;
                 } else {
-                    resultRoute.add(tripFactory.createTripFromLegs(firstLeg, previousLeg, "Train", false, false));
+                    resultRoute.add(tripFactory.createTripFromLegs(firstLeg, previousLeg));
                     firstLeg = leg;
                     previousLeg = leg;
                 }
             }
 
-            resultRoute.add(tripFactory.createTripFromLegs(firstLeg, previousLeg, "Train", false, false));
+            resultRoute.add(tripFactory.createTripFromLegs(firstLeg, previousLeg));
             resultRoutes.add(resultRoute);
         }
 

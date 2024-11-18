@@ -6,6 +6,7 @@ import org.example.TTMS.entities.Service;
 import org.example.TTMS.entities.Station;
 import org.example.TTMS.repositories.PriceRepository;
 import org.example.TTMS.responses.Trip;
+import org.example.TTMS.util.VehicleType;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -18,16 +19,17 @@ public class TripFactory {
     @Autowired
     private LowestPriceFinder lowestPriceFinder;
 
-    public Trip createTripFromLegs(Leg firstLeg, Leg lastLeg, String vehicleType,
-                                          boolean reservationAvailble, boolean reservationRequired) {
+    public Trip createTripFromLegs(Leg firstLeg, Leg lastLeg) {
         Station origin = firstLeg.getOrigin();
         Station destination = lastLeg.getDestination();
         Service service = firstLeg.getService();
+        VehicleType vehicleType = service.getVehicleType();
         List<Price> prices = priceRepository.findByTariffAndOriginAndDestination(service.getTariff(), origin, destination);
         Price price = lowestPriceFinder.find(prices);
 
         return new Trip(origin.getId(), origin.getName(), firstLeg.getDepartureTimeAsIsoString(),
                 destination.getId(), destination.getName(), lastLeg.getArrivalTimeAsIsoString(),
-                price.asMapForAPI(), service.getName(), vehicleType, reservationAvailble, reservationRequired);
+                price.asMapForAPI(), service.getName(), vehicleType.toString(),
+                service.isReservationAvailable(), service.isReservationRequired());
     }
 }
