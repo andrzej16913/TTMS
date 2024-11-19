@@ -29,7 +29,7 @@ public class TripFactory {
 
         return new Trip(origin.getId(), origin.getName(), firstLeg.getDepartureTimeAsIsoString(),
                 destination.getId(), destination.getName(), lastLeg.getArrivalTimeAsIsoString(),
-                price.asMapForAPI(), service.getName(), vehicleType.toString(),
+                service.getId(), price.asMapForAPI(), service.getName(), vehicleType.toString(),
                 service.isReservationAvailable(), service.isReservationRequired());
     }
 }

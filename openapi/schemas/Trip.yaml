@@ -9,6 +9,7 @@ Trip:
     - arrivalStationId
     - arrivalStationName
     - arrivalDateTime
+    - serviceId
     - price
   properties:
     departureStationId:
@@ -27,6 +28,9 @@ Trip:
     arrivalDateTime:
       type: string
       format: date-time
+    serviceId:
+      type: integer
+      format: int64
     price:
       $ref: "./Money.yaml"
     serviceName:
