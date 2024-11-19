@@ -1,7 +1,7 @@
 Trip:
   type: object
   title: Trip
-  description: An object representing one continous trip on one vehicle from the enbarkment to the disembarkment 
+  description: An object representing one continuous trip on one vehicle from the embankment to the dismemberment
   required:
     - departureStationId
     - departureStationName
