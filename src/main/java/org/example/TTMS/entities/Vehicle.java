@@ -10,4 +10,20 @@ public class Vehicle {
 
     @ManyToOne
     private VehicleModel model;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public VehicleModel getModel() {
+        return model;
+    }
+
+    public void setModel(VehicleModel model) {
+        this.model = model;
+    }
 }
