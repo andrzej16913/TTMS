@@ -1,8 +1,7 @@
-package org.example.TTMS.repositories;
+package org.example.TTMS.price;
 
-import org.example.TTMS.entities.Price;
-import org.example.TTMS.entities.Station;
-import org.example.TTMS.entities.Tariff;
+import org.example.TTMS.station.Station;
+import org.example.TTMS.tariff.Tariff;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

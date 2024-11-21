@@ -1,7 +1,6 @@
-package org.example.TTMS.repositories;
+package org.example.TTMS.leg;
 
-import org.example.TTMS.entities.Leg;
-import org.example.TTMS.entities.Station;
+import org.example.TTMS.station.Station;
 import org.springframework.data.repository.CrudRepository;
 
 import java.time.LocalDateTime;

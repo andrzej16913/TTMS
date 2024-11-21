@@ -1,7 +1,6 @@
-package org.example.TTMS.entities;
+package org.example.TTMS.vehicleModel;
 
 import jakarta.persistence.*;
-import org.example.TTMS.util.VehicleType;
 
 @Entity
 public class VehicleModel {

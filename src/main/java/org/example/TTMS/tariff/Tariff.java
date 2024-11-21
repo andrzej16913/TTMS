@@ -1,15 +1,13 @@
-package org.example.TTMS.entities;
+package org.example.TTMS.tariff;
 
 import jakarta.persistence.*;
 
 @Entity
-public class Vehicle {
+public class Tariff {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    @ManyToOne
-    private VehicleModel model;
+    private String name;
 
     public long getId() {
         return id;
@@ -19,11 +17,11 @@ public class Vehicle {
         this.id = id;
     }
 
-    public VehicleModel getModel() {
-        return model;
+    public String getName() {
+        return name;
     }
 
-    public void setModel(VehicleModel model) {
-        this.model = model;
+    public void setName(String name) {
+        this.name = name;
     }
 }

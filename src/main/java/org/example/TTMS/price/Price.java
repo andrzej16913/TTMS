@@ -1,6 +1,9 @@
-package org.example.TTMS.entities;
+package org.example.TTMS.price;
 
 import jakarta.persistence.*;
+import org.example.TTMS.station.Station;
+import org.example.TTMS.tariff.Tariff;
+import org.example.TTMS.travelClass.TravelClass;
 
 import java.math.BigDecimal;
 import java.util.Currency;
@@ -8,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Entity
-public class Price {
+public class Price implements Comparable<Price> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -97,5 +100,10 @@ public class Price {
             map.put("currency", currency.getCurrencyCode());
         }
         return map;
+    }
+
+    @Override
+    public int compareTo(Price price) {
+        return amount.compareTo(price.getAmount());
     }
 }

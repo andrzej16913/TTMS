@@ -1,6 +1,8 @@
-package org.example.TTMS.entities;
+package org.example.TTMS.seat;
 
 import jakarta.persistence.*;
+import org.example.TTMS.travelClass.TravelClass;
+import org.example.TTMS.vehicle.Vehicle;
 
 @Entity
 public class Seat {

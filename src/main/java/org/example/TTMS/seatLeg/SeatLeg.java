@@ -1,7 +1,10 @@
-package org.example.TTMS.entities;
+package org.example.TTMS.seatLeg;
 
 import jakarta.persistence.*;
+import org.example.TTMS.leg.Leg;
+import org.example.TTMS.seat.Seat;
 
+@Entity
 public class SeatLeg {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,5 +38,9 @@ public class SeatLeg {
 
     public void setLeg(Leg leg) {
         this.leg = leg;
+    }
+
+    public boolean isOccupied() {
+        return false;
     }
 }

@@ -1,4 +1,4 @@
-package org.example.TTMS.responses;
+package org.example.TTMS.trip;
 
 import java.util.Map;
 

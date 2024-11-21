@@ -1,6 +1,8 @@
-package org.example.TTMS.entities;
+package org.example.TTMS.leg;
 
 import jakarta.persistence.*;
+import org.example.TTMS.itinerary.Itinerary;
+import org.example.TTMS.station.Station;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -21,7 +23,7 @@ public class Leg {
 
     @ManyToOne
     //@Column(nullable = false)
-    private Service service;
+    private Itinerary itinerary;
 
     private LocalDateTime departureTime;
     private LocalDateTime arrivalTime;
@@ -50,12 +52,12 @@ public class Leg {
         this.destination = destination;
     }
 
-    public Service getService() {
-        return service;
+    public Itinerary getItinerary() {
+        return itinerary;
     }
 
-    public void setService(Service service) {
-        this.service = service;
+    public void setService(Itinerary itinerary) {
+        this.itinerary = itinerary;
     }
 
     public LocalDateTime getDepartureTime() {

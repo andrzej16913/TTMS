@@ -1,6 +1,5 @@
-package org.example.TTMS.repositories;
+package org.example.TTMS.station;
 
-import org.example.TTMS.entities.Station;
 import org.springframework.data.repository.CrudRepository;
 
 public interface StationRepository extends CrudRepository<Station, Long> {

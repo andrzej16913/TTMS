@@ -1,13 +1,16 @@
-package org.example.TTMS.entities;
+package org.example.TTMS.itinerary;
 
 import jakarta.persistence.*;
-import org.example.TTMS.util.VehicleType;
+import org.example.TTMS.leg.Leg;
+import org.example.TTMS.tariff.Tariff;
+import org.example.TTMS.vehicle.Vehicle;
+import org.example.TTMS.vehicleModel.VehicleType;
 
 import java.util.List;
 import java.util.Set;
 
 @Entity
-public class Service {
+public class Itinerary {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -17,7 +20,7 @@ public class Service {
     private boolean reservationRequired;
     private VehicleType vehicleType;
 
-    @OneToMany(mappedBy = "service")
+    @OneToMany(mappedBy = "itinerary")
     private List<Leg> legs;
 
     @ManyToOne

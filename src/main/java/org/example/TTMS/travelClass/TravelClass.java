@@ -1,4 +1,4 @@
-package org.example.TTMS.entities;
+package org.example.TTMS.travelClass;
 
 import jakarta.persistence.*;
 
