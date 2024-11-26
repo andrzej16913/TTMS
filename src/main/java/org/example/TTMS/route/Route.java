@@ -51,11 +51,13 @@ public class Route {
     public void cutLegsAfterFirstAppearance(Station station) {
         List<Leg> newList = new ArrayList<>();
         Iterator<Leg> it = legs.iterator();
-        Leg currentLeg = it.next();
 
-        while (currentLeg != null && currentLeg.getOrigin() != station) {
+        while (it.hasNext()) {
+            Leg currentLeg = it.next();
+            if (currentLeg.getOrigin().equals(station)) {
+                break;
+            }
             newList.add(currentLeg);
-            currentLeg = it.next();
         }
 
         legs = newList;
@@ -64,15 +66,17 @@ public class Route {
     public void cutLegsBeforeFirstAppearance(Station station) {
         List<Leg> newList = new ArrayList<>();
         Iterator<Leg> it = legs.iterator();
-        Leg currentLeg = it.next();
 
-        while (currentLeg != null && currentLeg.getDestination() != station) {
-            currentLeg = it.next();
+        while (it.hasNext()) {
+            Leg currentLeg = it.next();
+            if (currentLeg.getOrigin().equals(station)) {
+                newList.add(currentLeg);
+                break;
+            }
         }
 
-        while (currentLeg != null) {
-            newList.add(currentLeg);
-            currentLeg = it.next();
+        while (it.hasNext()) {
+            newList.add(it.next());
         }
 
         legs = newList;
