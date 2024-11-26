@@ -10,14 +10,14 @@ get:
       description: The ID of the departure station
       schema:
         type: integer
-        format: int32
+        format: int64
     - name: arrivalStationId
       in: path
       required: true
       description: The ID of the arrival station
       schema:
         type: integer
-        format: int32
+        format: int64
     - name: dateAndTime
       in: path
       required: true
