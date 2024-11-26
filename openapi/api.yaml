@@ -6,6 +6,8 @@ info:
 paths:
   /searchRoute:
     $ref: "./paths/searchRoute.yaml"
+  /occupiedSeats:
+    $ref: "./paths/occupiedSeats.yaml"
 components:
   schemas:
     $ref: "./schemas/_index.yaml"

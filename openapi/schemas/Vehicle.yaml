@@ -1,0 +1,15 @@
+Vehicle:
+  type: object
+  title: Vehicle
+  description: An object representing vehicle, includes an array of occupied seats
+  required:
+    - vehicleModelId
+    - occupiedSeats
+  properties:
+    vehicleModelId:
+      type: integer
+      format: int64
+    occupiedSeats:
+      type: array
+      items:
+        $ref: "./Seat.yaml"

@@ -1,0 +1,38 @@
+get:
+  summary: Get list of occupied seats for specified trip sorted by vehicle
+  operationId: occupiedSeats
+  parameters:
+    - name: serviceId
+      in: path
+      required: true
+      description: The ID of service which should be checked
+      schema:
+        type: integer
+        format: int64
+    - name: departureStationId
+      in: path
+      required: true
+      description: The ID of the departure station
+      schema:
+        type: integer
+        format: int64
+    - name: arrivalStationId
+      in: path
+      required: true
+      description: The ID of the arrival station
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: A list of vehicles with list of occupied seats
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/VehicleList.yaml"
+    default:
+      description: Error
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/Error.yaml"
